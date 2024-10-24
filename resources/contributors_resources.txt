@@ -1,0 +1,8 @@
+# Contributors Resources
+
+1. Resource Title: Pygame Basics Tutorial
+   - **Contributor:** JaneDoe123
+   - **Type:** Tutorial
+   - **Link:** https://example.com/pygame-basics
+   - **Description:** A comprehensive guide for beginners to get started with Pygame, covering installation and basic game setup.
+   - **Keywords:** pygame, tutorial, beginner
