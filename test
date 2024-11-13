@@ -1,0 +1,60 @@
+import pygame
+import sys
+
+pygame.init()
+
+# Set up display
+width, height = 800, 600  # Window size
+screen = pygame.display.set_mode((width, height))  # Create the window
+pygame.display.set_caption("The Lost Key: Shadows of the Golden Door")  # Set the window title
+
+# Set up colors
+WHITE = (255, 255, 255)  # White color
+BLUE = (0, 0, 255)       # Blue color for the player
+GREEN = (0, 255, 0)      # Green color for obstacles
+
+# Player settings
+player_pos = [100, 100]  # Starting position
+player_radius = 20       # Size of the player (circle radius)
+player_speed = 5         # Movement speed
+
+# Obstacle settings
+obstacles = [
+    pygame.Rect(200, 150, 50, 50),
+    pygame.Rect(400, 150, 50, 50),
+    pygame.Rect(600, 150, 50, 50),
+    pygame.Rect(200, 350, 50, 50),
+    pygame.Rect(400, 350, 50, 50),
+    pygame.Rect(600, 350, 50, 50),
+    pygame.Rect(300, 250, 50, 50),
+    pygame.Rect(500, 250, 50, 50)
+]
+
+# Main game loop
+while True:
+    for event in pygame.event.get():  # Check for events
+        if event.type == pygame.QUIT:  # Check if the window is closed
+            pygame.quit()  # Clean up Pygame
+            sys.exit()     # Exit the program
+            
+    # Get key presses for movement
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_LEFT] and player_pos[0] - player_radius > 0:
+        player_pos[0] -= player_speed
+    if keys[pygame.K_RIGHT] and player_pos[0] + player_radius < width:
+        player_pos[0] += player_speed
+    if keys[pygame.K_UP] and player_pos[1] - player_radius > 0:
+        player_pos[1] -= player_speed
+    if keys[pygame.K_DOWN] and player_pos[1] + player_radius < height:
+        player_pos[1] += player_speed
+        
+    screen.fill(WHITE)  # Fill the screen with white color
+
+    # Draw player as a blue circle
+    pygame.draw.circle(screen, BLUE, player_pos, player_radius)
+
+    # Draw obstacles as green rectangles
+    for obstacle in obstacles:
+        pygame.draw.rect(screen, GREEN, obstacle)
+
+    pygame.display.flip()  # Update the display with the changes
