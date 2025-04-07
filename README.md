@@ -47,16 +47,6 @@ Here's an overview of the folder structure:
 -   `/resources/` # Free tools, libraries, tutorials
 -   `/examples/` # Sample games or projects
 
-### 🎯 Hacktoberfest 2024  
-
-This repo is participating in Hacktoberfest 2024. You can contribute by:
-
--   Creating beginner-friendly game templates (e.g., platformers, puzzles, or any simple Pygame games).
--   Sharing free resources (e.g., tutorials, libraries, or tools) to help others learn Pygame.
--   Improving documentation (e.g., adding tips for beginners, expanding explanations).
-
-Make sure to register at the Hacktoberfest website to track your contributions!
-
 ### 📌 Current Issues
 
 To get started, please check out the open issues for Hacktoberfest contributions!
